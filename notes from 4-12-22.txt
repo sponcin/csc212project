@@ -1,0 +1,20 @@
+//node
+        //each node stores a vector
+        //root node is always sorted
+        //when a vector is full (k value), you split in half and the middle number moves up a tier
+        //each number in the array has an array greater than and less than itself
+        //recursive - insert and search
+        //b-tree of one is a regular balanced tree
+        //add a static int K = 3; -> can make the vector the size of K
+        //do different sizes of K and show how they compare for data visuals and runtime
+        //upper and lowercase!!
+        //edit hash function to be considerate of position -> multiply the value by it's position so we don't get duplicate numbers for ascii value of a word
+        //look into the set library
+
+        //std::vector<int> data; //use structs that store hash, string and count**
+        //children = node* //vector
+        
+ //tree
+        //root node pointer
+        //data_size = size of the vectors
+        //children size = data_size + 1
