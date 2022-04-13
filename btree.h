@@ -5,42 +5,28 @@
 class BTNode
 {
       private:
-        std::string word;
-        int key; // nodes can contain at least (key - 1) keys and a maximum of ((key * 2) - 1) keys 
-        BTNode* left;
-        BTNode* right;
-        int hash;
-        int ascii;
-        int count;
-
-
+        //child pointer
+        BTNode* child;
+        
     public:
+        struct wordData 
+        {
+            std::string word;
+            int hash;
+            int ascii;
+            int count;
+        };
+        //how many spaces available in a vector (minus 1)
+        int key; 
+        //vector using wordData data type
+        std::vector<wordData> data; 
         BTNode();
         BTNode(std::string word, int key);
-        int asciiFunction(std::string word, int ascii);
+        int hashFunction(std::string word);
+
         ~BTNode();
 
     friend class BTree; //can access RBTNode in the RBTree class
-
-
-
-    // public:
-    //     struct cell 
-    //     {
-    //         int row;
-    //         int column;
-    //         int val;
-    //         bool visited;
-    //     };
-    //     int rows;
-    //     int columns;
-    //     int seed;
-    //     std::string output_file_name;
-    //     std::vector<std::vector<cell>> data;
-    //     Maze(int seed, int rows, int columns, std::string output_file_name);
-    //     void printMaze();
-    //     void makeMaze();
-    //     void writeMaze();
 
 };
 
@@ -50,20 +36,21 @@ class BTree
         BTNode* root;
 
         BTNode* insert(int data, BTNode* root);
-        int height(BTNode* root);
 
         bool search(int data, BTNode* root);
 
-        BTNode* rotateLeft(BTNode* root);
-        BTNode* rotateRight(BTNode* root);
+        BTNode* splitChild(int data, BTNode* root);
 
     public:
         BTree();
         ~BTree();
 
         void insert(int data);
-        int height();
 
         bool search(int data);
 
+        void splitChild(int data);
+
+    //data_size = size of the vectors
+    //children size = data_size + 1
 };
