@@ -6,6 +6,7 @@
 
 //function declaration to read in the txt file
 void ReadFile(std::string input_file_name, std::vector<std::string>* data);
+int hashFunction(std::string word);
 
 //main function that takes in two parameters
 int main(int argc, char*argv[])
@@ -39,7 +40,7 @@ int main(int argc, char*argv[])
     {
         std::cout << data[i] << std::endl;
     }
-    
+
 }
 
 //Read from a file
@@ -54,7 +55,7 @@ void ReadFile(std::string input_file_name, std::vector<std::string>* data){
     std::string str;
 
     // Reads all lines in the file, 1 at at time
-    while (std::getline(file, str)) 
+    while (std::getline(file, str))
     {
       // Converts our string double to a stringstream
       std::istringstream ss(str);
@@ -68,4 +69,16 @@ void ReadFile(std::string input_file_name, std::vector<std::string>* data){
         }
         new_row.clear();
     }
+}
+
+
+int hashFunction(std::string word) {
+    int key = 0;
+
+    for (int i = 0; i < word.length(); i++) {
+        int ascii = int(word[i]) * i;
+        key += ascii;
+    }
+
+    return key;
 }
