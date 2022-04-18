@@ -6,23 +6,34 @@ class BTNode
 {
       private:
         //child pointer
-        BTNode* child;
-        
-    public:
-        struct wordData 
+        std::vector<BTNode*> children;
+
+        //struct containing the word, its resultant key, and a counter for duplicates
+        struct wordData
         {
             std::string word;
-            int hash;
-            int ascii;
-            int count;
+            int key;
+            int count = 0;
         };
-        //how many spaces available in a vector (minus 1)
-        int key; 
-        //vector using wordData data type
-        std::vector<wordData> data; 
+
+        //minimum degree of the b tree
+        //minimum degree:a fixed integer t >= 2. Every node other than the root must have at
+        //least t-1 keys. Every internal node other than the root thus has at least t children.
+        int minDeg;
+
+        int currentKeys;
+
+        //vector of type wordData
+        std::vector<wordData> data;
+
+        //boolean to determine if the node is a leaf node
+        bool isLeaf;
+
+
+    public:
         BTNode();
+        BTNode(int  minDeg, bool isLeaf);
         BTNode(std::string word, int key);
-        int hashFunction(std::string word);
 
         ~BTNode();
 
@@ -35,22 +46,15 @@ class BTree
     private:
         BTNode* root;
 
-        BTNode* insert(int data, BTNode* root);
-
-        bool search(int data, BTNode* root);
-
-        BTNode* splitChild(int data, BTNode* root);
+        int minDeg;
 
     public:
-        BTree();
+        BTree(int minDeg_);
         ~BTree();
 
-        void insert(int data);
+        void insert(int theKey, std::string theWord);
+        void splitChild(int index, BTNode *parent, BTNode *toSplit);
+        void insertNonFull(BTNode *newRoot, int theKey, std::string theWord);
+        bool search(int theKey);
 
-        bool search(int data);
-
-        void splitChild(int data);
-
-    //data_size = size of the vectors
-    //children size = data_size + 1
 };
