@@ -56,6 +56,8 @@ class BTree
         bool search(int key, BTNode* root);
         void searchWhenInput(int key, BTNode* root, bool &isPresent);
         void callSearch(int key, bool &isPresent);
+        void printdot(std::string file_name);
+        void recursdot(BTNode* node,  std::ofstream &output_file); 
 
 friend class BTNode;
 
