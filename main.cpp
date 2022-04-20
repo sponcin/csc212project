@@ -49,6 +49,9 @@ int main(int argc, char*argv[])
     }
 
     input_file.close();
+    
+    std::string file_name = "file name"//maybe get the name of the book from the command line
+    mytree.printdot(file_name
 
 }
 
