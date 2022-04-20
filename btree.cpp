@@ -234,3 +234,32 @@ void BTree::insertNonFull(BTNode *node, int theKey, std::string theWord) {
 BTree::~BTree(){
    
 }
+
+void BTree::printdot(std::string file_name)
+{
+    //Output file given name of file 
+    std::ofstream output_file(file_name);
+    output_file << "graph graphname {" << std::endl; //preparing file before handing it to recursdot
+    recursdot(root, output_file);
+    output_file << "}" <<std::endl; //end of output_file
+}
+
+void BTree::recursdot(BTNode* node, std::ofstream &output_file)
+{
+    //if nothing was inserted into the tree or at a leaf node
+    if(node == nullptr || node->children.size() == 0)
+    {
+        return;
+    }
+    //add to output_file with word and number of times repeated
+    output_file << data[0].word << " [label =  \""<< data[0].word << " " << data[0].count << "\"];" << std::endl;
+    for(int i = 0; i < node->children.size(); i++)
+    {
+        output_file << data[0].word << " -- " << children[i].data[0].word << std::endl;
+    }
+    //traverse through the tree
+    for(int i = 0; i < node->children.size(); i++)
+    {
+        recursdot(children[i], output_file);
+    }
+}
