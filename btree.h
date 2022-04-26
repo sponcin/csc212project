@@ -67,4 +67,6 @@ class BTree
         void traverseDot(BTNode* node, std::ofstream &output_file);
         void assignID(BTNode* node);
         void assign();
+        // void popWord(BTNode* node);
+        // void callPopWord();
 };

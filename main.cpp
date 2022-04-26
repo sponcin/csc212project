@@ -19,6 +19,12 @@ int main(int argc, char*argv[])
     //initialize integer variable to count the number of sentences
     int sentenceCount = 0;
 
+    //initialize unique word count (no repeats)
+    int uniqueCount = 0;
+
+    //initialize total word count (includes repeats)
+    int wordCount = 0;
+
     //initialize string variable to hold text file name
     std::string inputF = std::string(argv[1]);
 
@@ -33,11 +39,25 @@ int main(int argc, char*argv[])
 
     //get each word from input_file while a word is present
     while (input_file >> word) {
-
-        //if any of the listed punctuation is at the end of a word, remove
+        //if any of the listed punctuation is at the beginning or end of a word, remove
+        //remove quotes at the beginning of a word
+        if(word[0] == '"'){
+            std::cout << word << std::endl;
+            word.erase(0, 1);
+        }
+        if(word[word.length() - 1] == '"')
+        {
+            word.pop_back();
+        }
+        //remove ellipses
+        if(word[word.length() - 1] == '.' && word[word.length() - 2] == '.' && word[word.length() - 3] == '.'){
+            word.resize(word.size() - 3);
+        }
+        //remove non-sentence ending punctuation
         if (word[word.length() - 1] == ','|| word[word.length() - 1] ==':'|| word[word.length() - 1] =='"'|| word[word.length() - 1] ==';') {
             word.pop_back();
         }
+        //remove sentence punctuation and counts sentences
         if (word[word.length() - 1] =='.'|| word[word.length() - 1] =='?'|| word[word.length() - 1] =='!') {
             word.pop_back();
             sentenceCount += 1;
@@ -60,9 +80,14 @@ int main(int argc, char*argv[])
         //calls previously initialize myTree to call the callSearch function
         myTree.callSearch(key,isPresent);
 
+        //add one to word count (total words not unique)
+        wordCount += 1;
+
         //if word is not present, call the myTree insert function
         if (!isPresent) {
             myTree.insert(key,word);
+            //add unique word to counter
+            uniqueCount += 1;
         }
     }
 
@@ -81,8 +106,10 @@ int main(int argc, char*argv[])
     //calls the printdot function in myTree
     myTree.printdot(file_name);
 
+    //myTree.callPopWord();
+
     //cout the final sentence count
-    std::cout << sentenceCount << std::endl;
+    std::cout << sentenceCount << ", " << uniqueCount << ", "<< wordCount << std::endl;
 
     return 0;
 

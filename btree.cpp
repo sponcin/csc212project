@@ -275,14 +275,38 @@ void BTree::insertNonFull(BTNode *node, int theKey, std::string theWord) {
 }
 
 void BTree::printNode(BTNode* node) {
-    for (int i = 0; i < node->currentKeys; i++) {
-        std::cout << node->data[i].key << " ";
-        std::cout << node->data[i].word << " ";
-        std::cout << node->data[i].count << " ";
-        std::cout << std::endl;
-    }
+    // for (int i = 0; i < node->currentKeys; i++) {
+    //     std::cout << node->data[i].key << " ";
+    //     std::cout << node->data[i].word << " ";
+    //     std::cout << node->data[i].count << " ";
+    //     std::cout << std::endl;
+    // }
     return;
 }
+
+// void BTree::popWord(BTNode* node) {
+//     int mostPopCount = 0;
+//     std::string mostPopWord;
+
+//     for (int i = 0; i < node->currentKeys; i++) {
+//         if(!node->isLeaf){
+//             int count = node->data[i].count;
+//             std::cout << mostPopCount << std::endl;
+//             if(count >= mostPopCount){
+//                 mostPopCount = node->data[i].count;
+//                 mostPopWord = node->data[i].word;
+//             }
+//         }
+//         std::cout << "Most Popular Word = " << mostPopWord << " Count = " << mostPopCount << std::endl;
+//     }
+
+//     return;
+// }
+
+// void BTree::callPopWord() {
+//     popWord(root);
+//     return;
+// }
 
 
 void BTree::traverse(BTNode* node) {
