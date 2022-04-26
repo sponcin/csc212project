@@ -325,26 +325,6 @@ void BTree::printdot(std::string file_name)
     output_file << "}" <<std::endl; //end of output_file
 }
 
-// void BTree::recursdot(BTNode* node, std::ofstream &output_file)
-// {
-//     //if nothing was inserted into the tree or at a leaf node
-//     if(node == nullptr || node->children.size() == 0)
-//     {
-//         return;
-//     }
-//     //add to output_file with word and number of times repeated
-//     output_file << node->data[0].word << " [label =  \""<< node->data[0].word << " " << node->data[0].count << "\"];" << std::endl;
-//     for(int i = 0; i < node->children.size(); i++)
-//     {
-//         output_file << node->data[0].word << " -- " << node->children[i]->data[0].word << std::endl;
-//     }
-//     //traverse through the tree
-//     for(int i = 0; i < node->children.size(); i++)
-//     {
-//         recursdot(node->children[i], output_file);
-//     }
-// }
-
 void BTree::traverseDot(BTNode* node, std::ofstream &output_file) {
 
     output_file << node->id << " [label =  \"";
@@ -368,4 +348,3 @@ void BTree::traverseDot(BTNode* node, std::ofstream &output_file) {
     }
 }
 
-//removed from node-> children line 345 .data[0].word
