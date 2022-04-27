@@ -5,130 +5,107 @@
 #include <sstream>
 #include <string>
 #include <stdlib.h>
+#include <algorithm>
 
-//declares function to calculate hash number
 int hashFunction(std::string word);
 
-//main function that takes in parameters - text file name, size of node vector and name of output file
+//main function that takes in three parameters
 int main(int argc, char*argv[])
 {
 
-    //initialize string called word to store each word in the file
+    //string that will be updated with each word in the file
     std::string word;
+
+    //name of input file
+    std::string inputF = std::string(argv[1]);
+
+    //name of output file
+    std::string outputF = std::string(argv[2]);
+
+    //create input stream for while loop
+    std::ifstream input_file(inputF);
 
     //initialize integer variable to count the number of sentences
     int sentenceCount = 0;
 
-    //initialize unique word count (no repeats)
-    int uniqueCount = 0;
+    //mimimum degree, see btree.h for explanation
+    int minDeg = std::stoi(argv[3]);
 
-    //initialize total word count (includes repeats)
-    int wordCount = 0;
-
-    //initialize string variable to hold text file name
-    std::string inputF = std::string(argv[1]);
-
-    //
-    std::ifstream input_file(inputF);
-
-    //initialize int variable that stores the node vector size
-    int minDeg = std::stoi(argv[2]);
-
-    //initializes new BTree called myTree
+    //initialize the btree using minimum degree
     BTree myTree(minDeg);
 
-    //get each word from input_file while a word is present
+    //while the input stream receives words
     while (input_file >> word) {
-        //if any of the listed punctuation is at the beginning or end of a word, remove
-        //remove quotes at the beginning of a word
-        if(word[0] == '"'){
-            std::cout << word << std::endl;
-            word.erase(0, 1);
-        }
-        if(word[word.length() - 1] == '"')
-        {
-            word.pop_back();
-        }
-        //remove ellipses
-        if(word[word.length() - 1] == '.' && word[word.length() - 2] == '.' && word[word.length() - 3] == '.'){
-            word.resize(word.size() - 3);
-        }
-        //remove non-sentence ending punctuation
-        if (word[word.length() - 1] == ','|| word[word.length() - 1] ==':'|| word[word.length() - 1] =='"'|| word[word.length() - 1] ==';') {
-            word.pop_back();
-        }
-        //remove sentence punctuation and counts sentences
-        if (word[word.length() - 1] =='.'|| word[word.length() - 1] =='?'|| word[word.length() - 1] =='!') {
-            word.pop_back();
+
+         //if the current word ends with any of the following punctuation, increment sentenceCount
+         if (word[word.length() - 1] =='.'|| word[word.length() - 1] =='?'|| word[word.length() - 1] =='!' || word[word.length() - 1] == '"') {
             sentenceCount += 1;
         }
 
-        //remove spaces
-        if (word[0] == '"') {
-            word.erase(0,1);
+        //loop through word, eliminate all punctuation except for apostrophes
+        for (int i = word.size(); i >= 0; i--) {
+            if (std::ispunct(word[i]) || word[i] == '"') {
+                word.erase(i,1);
+            }
         }
 
-        //transform all words to lowercase
-        transform(word.begin(), word.end(), word.begin(), ::tolower);
 
-        //initialize integer key variable that calls hashFunction
+        //make the word all lowercase
+        std::for_each(word.begin(),word.end(), [](char &letter) {
+            letter = std::tolower(letter);
+        });
+
+        //hash the word
         int key = hashFunction(word);
 
-        //initialize boolean variable isPresent to check if the word is present in the tree
+        //boolean used to determine if the word is present in the tree or not
         bool isPresent;
 
-        //calls previously initialize myTree to call the callSearch function
+        //search what already exists in the tree. if present, count is updated
         myTree.callSearch(key,isPresent);
 
-        //add one to word count (total words not unique)
-        wordCount += 1;
-
-        //if word is not present, call the myTree insert function
+        //if the word is not present in the tree, insert it
         if (!isPresent) {
             myTree.insert(key,word);
-            //add unique word to counter
-            uniqueCount += 1;
         }
     }
 
-    //closes the input file
+    //close the file
     input_file.close();
 
-    //calls the callTraverse function in myTree
+    //traverse and print the contents of each node to the terminal
     myTree.callTraverse();
 
-    //calls the assign function in myTree
+    //assign each node a number for the dot file
     myTree.assign();
 
-    //uses mainline argument at index 3 for the filename of the output file
-    std::string file_name = std::string(argv[3]);
+    //create output file for dot format representation
+    myTree.printdot(outputF);
 
-    //calls the printdot function in myTree
-    myTree.printdot(file_name);
+    //output number of sentences in the text file
+    std::cout << "This text file has " << sentenceCount << " sentences." << std::endl;
 
-    //myTree.callPopWord();
+    myTree.callPopular();
 
-    //cout the final sentence count
-    std::cout << sentenceCount << ", " << uniqueCount << ", "<< wordCount << std::endl;
+    myTree.findAvg();
 
     return 0;
 
 }
 
-//definition of hashFunction with word as the parameter
+
 int hashFunction(std::string word) {
-    //initialize key value to 0
+    //sum
     int key = 0;
-    
-    //for loop to go through the word
+
+    //loop through the word
     for (int i = 0; i < word.length(); i++) {
-        //initialize ascii integer variable that gets the int value of each character and multiplies
-        //it by i + 1
+        //take ascii value of the letter and multiply by the index plus one
         int ascii = int(word[i]) * (i + 1);
-        //key is the ascii value plus the ascii of each previous letter of the word
+        //add to sum
         key += ascii;
     }
 
-    //returns key to
+    //return sum
     return key;
 }

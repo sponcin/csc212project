@@ -1,6 +1,7 @@
 #include "btree.h"
 #include <fstream>
 #include <iostream>
+#include <iomanip>
 
 BTNode::BTNode()
 {
@@ -44,8 +45,10 @@ BTNode::~BTNode(){
 }
 
 BTree::BTree() {
+    //set root to null
     root = nullptr;
 
+    //minimum degree must be at least 2
     minDeg = 2;
 }
 
@@ -53,6 +56,7 @@ BTree::BTree(int minDeg_) {
     //create an empty tree
     root = nullptr;
 
+    //minimum degree provided by the user
     minDeg = minDeg_;
 }
 
@@ -275,44 +279,23 @@ void BTree::insertNonFull(BTNode *node, int theKey, std::string theWord) {
 }
 
 void BTree::printNode(BTNode* node) {
-    // for (int i = 0; i < node->currentKeys; i++) {
-    //     std::cout << node->data[i].key << " ";
-    //     std::cout << node->data[i].word << " ";
-    //     std::cout << node->data[i].count << " ";
-    //     std::cout << std::endl;
-    // }
+    //for each element in the node, print the key, word, and count
+    for (int i = 0; i < node->currentKeys; i++) {
+        std::cout << node->data[i].key << " ";
+        std::cout << node->data[i].word << " ";
+        std::cout << node->data[i].count << " ";
+        std::cout << std::endl;
+    }
     return;
 }
 
-// void BTree::popWord(BTNode* node) {
-//     int mostPopCount = 0;
-//     std::string mostPopWord;
-
-//     for (int i = 0; i < node->currentKeys; i++) {
-//         if(!node->isLeaf){
-//             int count = node->data[i].count;
-//             std::cout << mostPopCount << std::endl;
-//             if(count >= mostPopCount){
-//                 mostPopCount = node->data[i].count;
-//                 mostPopWord = node->data[i].word;
-//             }
-//         }
-//         std::cout << "Most Popular Word = " << mostPopWord << " Count = " << mostPopCount << std::endl;
-//     }
-
-//     return;
-// }
-
-// void BTree::callPopWord() {
-//     popWord(root);
-//     return;
-// }
-
 
 void BTree::traverse(BTNode* node) {
+    //print the contents of the node
     printNode(node);
     std::cout << "--------" << std::endl;
 
+    //loop of recursive calls provided the node is not a leaf
     for (int i = 0; i <= node->currentKeys; i++) {
         if(!node->isLeaf) {
             traverse(node->children[i]);
@@ -320,14 +303,17 @@ void BTree::traverse(BTNode* node) {
     }
 }
 
+//public facing function that traverses the tree
 void BTree::callTraverse() {
     traverse(root);
     return;
 }
 
 void BTree::assignID(BTNode* node) {
+    //every time a node is visited, it's id is one more than the previous node
     node->id = idCounter++;
 
+    //loop of recursive calls to the children of the current node
     for (int i = 0; i <= node->currentKeys; i++) {
         if(!node->isLeaf) {
             assignID(node->children[i]);
@@ -335,6 +321,7 @@ void BTree::assignID(BTNode* node) {
     }
 }
 
+//public facing assignID function
 void BTree::assign() {
     assignID(root);
     return;
@@ -342,7 +329,7 @@ void BTree::assign() {
 
 void BTree::printdot(std::string file_name)
 {
-    //Output file given name of file 
+    //Output file given name of file
     std::ofstream output_file(file_name);
     output_file << "graph graphname {" << std::endl; //preparing file before handing it to recursdot
     traverseDot(root, output_file);
@@ -351,20 +338,27 @@ void BTree::printdot(std::string file_name)
 
 void BTree::traverseDot(BTNode* node, std::ofstream &output_file) {
 
+    //assigns label to node
     output_file << node->id << " [label =  \"";
+    //loop through current node, retrieve the words and count within the node
     for(int i = 0; i < node->currentKeys; i++)
     {
+        //write to output
         output_file << node->data[i].word << " " << node->data[i].count <<  " - ";
     }
 
+    //ends label
     output_file << "\"];" << std::endl;
-    
+
+    //loop through children vector
     for(int i = 0; i < node->children.size() && node->children[i] != nullptr; i++)
     {
+        //prints links between current node and its children
         output_file << node->id << " -- " << node->children[i]->id << std::endl;
 
     }
 
+    //if not a leaf node, recursively call to each child of current node
     for (int i = 0; i <= node->currentKeys; i++) {
         if(!node->isLeaf) {
             traverseDot(node->children[i], output_file);
@@ -372,3 +366,77 @@ void BTree::traverseDot(BTNode* node, std::ofstream &output_file) {
     }
 }
 
+void BTree::mostPopular(BTNode* node, std::string &theWord, int &theCount) {
+
+    for (int i = 0; i < node->currentKeys; i++) {
+        if (node->data[i].count > theCount) {
+            theCount = node->data[i].count;
+            theWord = node->data[i].word;
+        }
+    }
+
+    //loop of recursive calls provided the node is not a leaf
+    for (int i = 0; i <= node->currentKeys; i++) {
+        if(!node->isLeaf) {
+            mostPopular(node->children[i],theWord,theCount);
+        }
+    }
+}
+
+void BTree::callPopular() {
+    std::string theWord;
+    int theCount = 0;
+    mostPopular(root,theWord,theCount);
+    std::cout << "The most popular word in this text file is '" << theWord << "', which appeared " << theCount << " times." << std::endl;
+    return;
+}
+
+void BTree::avgLength(BTNode *node, float &sum, float &numElements) {
+    for (int i = 0; i < node->currentKeys; i++) {
+        std::string theWord = node->data[i].word;
+        int length = theWord.length() * node->data[i].count;
+        sum += length;
+        numElements += node->data[i].count;
+    }
+
+    //loop of recursive calls provided the node is not a leaf
+    for (int i = 0; i <= node->currentKeys; i++) {
+        if(!node->isLeaf) {
+            avgLength(node->children[i],sum,numElements);
+        }
+    }
+}
+
+void BTree::findAvg() {
+    float sum = 0;
+    float numElements = 0;
+    avgLength(root,sum,numElements);
+
+    float avg = sum/numElements;
+
+    std::cout << "This text file has an average word length of " << std::setprecision(2) << avg << "." << std::endl;
+    return;
+}
+
+void BTree::uniqueWords(BTNode *node, int &uniqueCount) {
+    for (int i = 0; i < node->currentKeys; i++) {
+        uniqueCount++;
+    }
+
+    //loop of recursive calls provided the node is not a leaf
+    for (int i = 0; i <= node->currentKeys; i++) {
+        if(!node->isLeaf) {
+            uniqueWords(node->children[i],uniqueCount);
+        }
+    }
+}
+
+void BTree::callUnique() {
+    int uniqueCount;
+
+    uniqueWords(root,uniqueCount);
+
+    std::cout << "The unique word frequency of this text file is " << uniqueCount << "." << std::endl;
+
+    return;
+}

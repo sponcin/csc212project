@@ -33,9 +33,12 @@ class BTNode
         //boolean to determine if the node is a leaf node
         bool isLeaf;
 
+        //constructor
         BTNode();
+        //parameterized constructor
         BTNode(int minDegree_, bool leafy);
 
+        //destructor
         ~BTNode();
 };
 
@@ -43,14 +46,20 @@ class BTree
 {
 
     public:
+        //root pointer
         BTNode* root;
 
+        //used to assign a numeric id to each node
         int idCounter = 0;
 
+        //minimum degree
         int minDeg;
 
+        //constructor
         BTree();
+        //parameterized constructor
         BTree(int minDeg_);
+        //destructor
         ~BTree();
 
         void insert(int theKey, std::string theWord);
@@ -63,10 +72,13 @@ class BTree
         void traverse(BTNode* node);
         void callTraverse();
         void printdot(std::string file_name);
-        // void recursdot(BTNode* node,  std::ofstream &output_file); 
         void traverseDot(BTNode* node, std::ofstream &output_file);
         void assignID(BTNode* node);
         void assign();
-        // void popWord(BTNode* node);
-        // void callPopWord();
+        void mostPopular(BTNode* node, std::string &theWord, int &theCount);
+        void callPopular();
+        void avgLength(BTNode* node, float &sum, float &theCount);
+        void findAvg();
+        void uniqueWords(BTNode *node, int &uniqueCount);
+        void callUnique();
 };
