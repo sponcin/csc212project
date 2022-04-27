@@ -344,14 +344,14 @@ void BTree::traverseDot(BTNode* node, std::ofstream &output_file) {
     for(int i = 0; i < node->currentKeys; i++)
     {
         //write to output
-        output_file << node->data[i].word << " " << node->data[i].count <<  " - ";
+        output_file << node->data[i].word << " " << node->data[i].count <<  " | ";
     }
 
     //ends label
     output_file << "\"];" << std::endl;
 
     //loop through children vector
-    for(int i = 0; i < node->children.size() && node->children[i] != nullptr; i++)
+    for(int i = 0; i <= node->currentKeys && node->children[i] != nullptr; i++)
     {
         //prints links between current node and its children
         output_file << node->id << " -- " << node->children[i]->id << std::endl;
@@ -369,7 +369,9 @@ void BTree::traverseDot(BTNode* node, std::ofstream &output_file) {
 void BTree::mostPopular(BTNode* node, std::string &theWord, int &theCount) {
 
     for (int i = 0; i < node->currentKeys; i++) {
+        //if current element has a greater count than our current count
         if (node->data[i].count > theCount) {
+            //count is updated to count of current element, current word becomes the word
             theCount = node->data[i].count;
             theWord = node->data[i].word;
         }
@@ -383,19 +385,32 @@ void BTree::mostPopular(BTNode* node, std::string &theWord, int &theCount) {
     }
 }
 
+//public facing function to find the most popular word
 void BTree::callPopular() {
+    //string and int vars that will be updateed in call of mostPopular
     std::string theWord;
     int theCount = 0;
+
     mostPopular(root,theWord,theCount);
+
     std::cout << "The most popular word in this text file is '" << theWord << "', which appeared " << theCount << " times." << std::endl;
     return;
 }
 
 void BTree::avgLength(BTNode *node, float &sum, float &numElements) {
+    //for each element in the current node
     for (int i = 0; i < node->currentKeys; i++) {
+
+        //find the length of the current word
         std::string theWord = node->data[i].word;
+
+        //multiply length of word by the number of times it appears in the text
         int length = theWord.length() * node->data[i].count;
+
+        //add this value to the sum
         sum += length;
+
+        //add the count of curr element to total number of elements/words
         numElements += node->data[i].count;
     }
 
@@ -407,11 +422,15 @@ void BTree::avgLength(BTNode *node, float &sum, float &numElements) {
     }
 }
 
+//public facing function to find the average word length
 void BTree::findAvg() {
+    //float values that are updated when avgLength is called
     float sum = 0;
     float numElements = 0;
+
     avgLength(root,sum,numElements);
 
+    //take the average
     float avg = sum/numElements;
 
     std::cout << "This text file has an average word length of " << std::setprecision(2) << avg << "." << std::endl;
@@ -419,6 +438,7 @@ void BTree::findAvg() {
 }
 
 void BTree::uniqueWords(BTNode *node, int &uniqueCount) {
+    //count each word in the node, disregarding duplicates
     for (int i = 0; i < node->currentKeys; i++) {
         uniqueCount++;
     }
@@ -432,7 +452,8 @@ void BTree::uniqueWords(BTNode *node, int &uniqueCount) {
 }
 
 void BTree::callUnique() {
-    int uniqueCount;
+    //int var that gets updated via uniqueWords
+    int uniqueCount = 0;
 
     uniqueWords(root,uniqueCount);
 
