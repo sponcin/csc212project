@@ -49,11 +49,8 @@ int main(int argc, char*argv[])
             }
         }
 
-
-        //make the word all lowercase
-        std::for_each(word.begin(),word.end(), [](char &letter) {
-            letter = std::tolower(letter);
-        });
+        //transform all words to lowercase
+        transform(word.begin(), word.end(), word.begin(), ::tolower);
 
         //hash the word
         int key = hashFunction(word);
@@ -74,7 +71,7 @@ int main(int argc, char*argv[])
     input_file.close();
 
     //traverse and print the contents of each node to the terminal
-    myTree.callTraverse();
+    //myTree.callTraverse();
 
     //assign each node a number for the dot file
     myTree.assign();
@@ -115,9 +112,8 @@ int main(int argc, char*argv[])
                 }
             }
 
-            std::for_each(userSearch.begin(),userSearch.end(), [](char &letter) {
-                letter = std::tolower(letter);
-            });
+            //transform all words to lowercase
+            transform(word.begin(), word.end(), word.begin(), ::tolower);
 
             //generate key
             int userKey = hashFunction(userSearch);
