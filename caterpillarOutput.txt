@@ -1,0 +1,142 @@
+-1104622604 warm 1 
+304711572 moon 1 
+997191126 by 1 
+--------
+-1918588265 friday 1 
+-1640058519 thursday 1 
+-1421157091 very 3 
+--------
+-2132836641 cake 1 
+-2084661287 oranges 1 
+-2079188625 after 1 
+-2011324720 monday 1 
+-1991937304 in 2 
+--------
+-1853300677 icecream 1 
+-1851662497 pickle 1 
+-1800225428 piece 2 
+-1753425176 than 1 
+-1691580833 four 1 
+-1666774915 pears 1 
+-1652341378 then 1 
+--------
+-1595877362 anymore 1 
+-1572178968 wednesday 1 
+-1549263265 two 2 
+-1428158155 tiny 1 
+--------
+-1359967123 apple 1 
+-1331354231 pop 1 
+-1285326102 better 1 
+-1243254680 one 13 
+-1178061217 anymoreand 1 
+-69306902 that 1 
+--------
+-781794922 eric 1 
+-576132550 wasnt 2 
+-511529676 food 1 
+-280011329 up 1 
+-186354706 started 1 
+53402532 swiss 1 
+--------
+-1034402059 stomach 1 
+-996054455 big 1 
+-929734258 egg 2 
+-817894195 he 21 
+-805065478 a 10 
+-391329650 little 1 
+--------
+-775232579 nice 1 
+-773844533 cocoon 2 
+-620460183 three 1 
+-588545230 beautiful 1 
+--------
+-565255687 had 1 
+-546070772 day 1 
+-540891745 of 7 
+--------
+-430519449 salami 1 
+-395446403 house 1 
+-391329650 little 1 
+-375271515 cheese 1 
+-310865401 the 9 
+--------
+-274317317 lay 1 
+-263406260 became 1 
+-254743864 now 1 
+-243073402 watermelon 1 
+--------
+-134549696 built 1 
+-69306902 that 1 
+-9660825 strawberries 1 
+--------
+75775939 but 5 
+143556532 sausage 1 
+227425279 cherry 1 
+242957430 night 1 
+--------
+479125522 on 7 
+739525371 came 1 
+832129097 morning 1 
+--------
+322789885 for 2 
+357136086 cone 1 
+359687362 chocolate 1 
+418149814 ate 7 
+440522757 stayed 1 
+--------
+513087943 next 1 
+549012902 and 4 
+679189642 some 1 
+687946665 fat 1 
+690590951 plums 1 
+725244161 called 1 
+--------
+761150486 sunday 2 
+763927571 nibbled 1 
+773861316 lollipop 1 
+793573831 out 2 
+870254100 himself 1 
+--------
+833015636 pie 1 
+863479367 five 1 
+991912666 again 1 
+--------
+1241576207 felt 1 
+1337574890 carle 1 
+1643837362 leaf 2 
+1870355705 hungry 8 
+--------
+1139487200 slice 3 
+1172657345 caterpillar 5 
+1209174337 still 5 
+1321102310 pushed 1 
+--------
+1266626078 small 1 
+1306687740 around 1 
+1644792132 cupcake 1 
+--------
+1341650581 way 1 
+1353135734 ache 1 
+1554389240 saturday 1 
+1580075219 hole 1 
+1602390517 more 1 
+--------
+1661515981 inside 1 
+1686638399 his 1 
+1756900824 weeks 1 
+1786484932 butterfly 1 
+1795767404 through 7 
+--------
+1196162821 looking 1 
+1910048689 sun 1 
+1970408323 tuesday 1 
+1993124361 cam 1 
+2012999754 light 1 
+2039633541 was 7 
+--------
+This text file has 20 sentences.
+The most popular word in this text file is 'he', which appears 21 times.
+The unique word frequency of this text file is 112.
+This text file has 227 words in total.
+This text file has an average word length of 4.2 letters.

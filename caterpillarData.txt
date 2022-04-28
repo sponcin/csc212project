@@ -1,0 +1,51 @@
+graph graphname {
+0 [label =  "warm 1 | moon 1 | by 1 | "];
+0 -- 1
+0 -- 6
+0 -- 14
+0 -- 19
+1 [label =  "friday 1 | thursday 1 | very 3 | "];
+1 -- 2
+1 -- 3
+1 -- 4
+1 -- 5
+2 [label =  "cake 1 | oranges 1 | after 1 | monday 1 | in 2 | "];
+3 [label =  "icecream 1 | pickle 1 | piece 2 | than 1 | four 1 | pears 1 | then 1 | "];
+4 [label =  "anymore 1 | wednesday 1 | two 2 | tiny 1 | "];
+5 [label =  "apple 1 | pop 1 | better 1 | one 13 | anymoreand 1 | that 1 | "];
+6 [label =  "eric 1 | wasnt 2 | food 1 | up 1 | started 1 | swiss 1 | "];
+6 -- 7
+6 -- 8
+6 -- 9
+6 -- 10
+6 -- 11
+6 -- 12
+6 -- 13
+7 [label =  "stomach 1 | big 1 | egg 2 | he 21 | a 10 | little 1 | "];
+8 [label =  "nice 1 | cocoon 2 | three 1 | beautiful 1 | "];
+9 [label =  "had 1 | day 1 | of 7 | "];
+10 [label =  "salami 1 | house 1 | little 1 | cheese 1 | the 9 | "];
+11 [label =  "lay 1 | became 1 | now 1 | watermelon 1 | "];
+12 [label =  "built 1 | that 1 | strawberries 1 | "];
+13 [label =  "but 5 | sausage 1 | cherry 1 | night 1 | "];
+14 [label =  "on 7 | came 1 | morning 1 | "];
+14 -- 15
+14 -- 16
+14 -- 17
+14 -- 18
+15 [label =  "for 2 | cone 1 | chocolate 1 | ate 7 | stayed 1 | "];
+16 [label =  "next 1 | and 4 | some 1 | fat 1 | plums 1 | called 1 | "];
+17 [label =  "sunday 2 | nibbled 1 | lollipop 1 | out 2 | himself 1 | "];
+18 [label =  "pie 1 | five 1 | again 1 | "];
+19 [label =  "felt 1 | carle 1 | leaf 2 | hungry 8 | "];
+19 -- 20
+19 -- 21
+19 -- 22
+19 -- 23
+19 -- 24
+20 [label =  "slice 3 | caterpillar 5 | still 5 | pushed 1 | "];
+21 [label =  "small 1 | around 1 | cupcake 1 | "];
+22 [label =  "way 1 | ache 1 | saturday 1 | hole 1 | more 1 | "];
+23 [label =  "inside 1 | his 1 | weeks 1 | butterfly 1 | through 7 | "];
+24 [label =  "looking 1 | sun 1 | tuesday 1 | cam 1 | light 1 | was 7 | "];
+}

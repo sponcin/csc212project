@@ -1,0 +1,57 @@
+graph graphname {
+0 [label =  "hung 1 | made 2 | when 1 | "];
+0 -- 1
+0 -- 9
+0 -- 14
+0 -- 22
+1 [label =  "forest 1 | loved 1 | someone 1 | are 3 | i’ll 1 | kind 1 | "];
+1 -- 2
+1 -- 3
+1 -- 4
+1 -- 5
+1 -- 6
+1 -- 7
+1 -- 8
+2 [label =  "yellow 1 | max’s 1 | wild 11 | in 3 | teeth 2 | boat 1 | "];
+3 [label =  "oh 1 | all 7 | into 3 | found 1 | boat 1 | "];
+4 [label =  "rolled 2 | smelled 1 | please 1 | "];
+5 [label =  "stepped 1 | waved 1 | across 1 | world 2 | "];
+6 [label =  "good 1 | then 1 | until 1 | "];
+7 [label =  "eat 3 | him 5 | most 1 | very 2 | off 2 | grew 3 | "];
+8 [label =  "supper 2 | one 1 | bed 2 | place 1 | cried 2 | claws 2 | no 1 | "];
+9 [label =  "suit 1 | of 10 | with 3 | "];
+9 -- 10
+9 -- 11
+9 -- 12
+9 -- 13
+10 [label =  "away 1 | roars 2 | almost 1 | blinking 1 | walls 1 | "];
+11 [label =  "another 1 | he 6 | a 5 | rumpus 1 | eyes 3 | day 2 | "];
+12 [label =  "mother 1 | start 1 | they 2 | the 16 | sailed 2 | "];
+13 [label =  "up 2 | over 2 | became 1 | "];
+14 [label =  "showed 2 | night 4 | king 3 | to 6 | came 1 | thing 2 | "];
+14 -- 15
+14 -- 16
+14 -- 17
+14 -- 18
+14 -- 19
+14 -- 20
+14 -- 21
+15 [label =  "back 1 | now 2 | from 1 | were 1 | ceiling 1 | be 2 | that 1 | "];
+16 [label =  "year 2 | staring 1 | love 1 | but 2 | go 1 | waiting 1 | wolf 1 | "];
+17 [label =  "where 5 | for 2 | we’ll 1 | you 3 | upwe 1 | "];
+18 [label =  "sent 2 | anything 1 | tumbled 1 | "];
+19 [label =  "goodbye 1 | said 3 | and 35 | it 1 | called 2 | magic 1 | "];
+20 [label =  "out 2 | once 1 | by 1 | wore 1 | "];
+21 [label =  "said 1 | terrible 8 | room 2 | wanted 1 | max 8 | "];
+22 [label =  "around 2 | vines 1 | weeks 2 | so 3 | "];
+22 -- 23
+22 -- 24
+22 -- 25
+22 -- 26
+22 -- 27
+23 [label =  "roared 2 | still 2 | private 2 | ocean 1 | "];
+24 [label =  "being 1 | don’t 1 | an 1 | gnashed 2 | stop 1 | till 1 | best 1 | "];
+25 [label =  "tamed 1 | gave 1 | trick 1 | lonely 1 | his 6 | "];
+26 [label =  "their 10 | through 2 | far 1 | things 9 | frightened 1 | let 1 | "];
+27 [label =  "eating 1 | own 1 | hot 1 | was 3 | mischief 1 | without 3 | "];
+}

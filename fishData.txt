@@ -1,0 +1,107 @@
+graph graphname {
+0 [label =  "deep 3 | "];
+0 -- 1
+0 -- 29
+1 [label =  "most 3 | us 2 | sea 2 | "];
+1 -- 2
+1 -- 10
+1 -- 18
+1 -- 23
+2 [label =  "proud 1 | there 1 | really 1 | please 1 | are 2 | dazzling 1 | "];
+2 -- 3
+2 -- 4
+2 -- 5
+2 -- 6
+2 -- 7
+2 -- 8
+2 -- 9
+3 [label =  "story 1 | swim 1 | couldnt 1 | wouldnt 1 | watched 1 | "];
+4 [label =  "yet 1 | lived 1 | after 1 | please 1 | "];
+5 [label =  "finally 1 | in 7 | all 1 | friends 2 | found 1 | "];
+6 [label =  "like 1 | water 2 | into 1 | maybe 2 | peculiar 1 | "];
+7 [label =  "stinky 1 | say 1 | have 4 | time 1 | "];
+8 [label =  "good 1 | only 2 | your 2 | then 2 | help 1 | "];
+9 [label =  "splash 1 | him 4 | two 1 | thought 1 | wise 1 | much 1 | beautiful 1 | "];
+10 [label =  "octopus 4 | wait 1 | give 4 | no 3 | away 6 | amazed 1 | "];
+10 -- 11
+10 -- 12
+10 -- 13
+10 -- 14
+10 -- 15
+10 -- 16
+10 -- 17
+11 [label =  "very 5 | ink 1 | darkness 1 | given 1 | "];
+12 [label =  "off 1 | smallest 1 | dont 1 | emerged 1 | "];
+13 [label =  "one 10 | silent 1 | starfish 1 | "];
+14 [label =  "left 2 | cried 1 | shared 1 | glimmering 1 | "];
+15 [label =  "dark 2 | can 1 | find 1 | "];
+16 [label =  "each 1 | starfish 1 | am 1 | if 1 | see 1 | "];
+17 [label =  "scale 10 | as 2 | he 16 | swam 3 | a 12 | rainbow 17 | "];
+18 [label =  "entire 2 | doesnt 1 | of 6 | "];
+18 -- 19
+18 -- 20
+18 -- 21
+18 -- 22
+19 [label =  "beauty 1 | them 3 | cant 2 | advice 1 | at 1 | "];
+20 [label =  "touch 1 | who 1 | she 1 | admire 1 | eyes 1 | rather 1 | "];
+21 [label =  "beautiful 3 | playfully 1 | had 4 | day 2 | "];
+22 [label =  "at 2 | what 2 | silver 1 | purple 1 | "];
+23 [label =  "the 48 | now 1 | shade 1 | why 1 | "];
+23 -- 24
+23 -- 25
+23 -- 26
+23 -- 27
+23 -- 28
+24 [label =  "sparkling 1 | turned 1 | ones 1 | little 8 | they 5 | from 1 | "];
+25 [label =  "shimmering 1 | with 9 | longer 1 | over 1 | became 1 | back 2 | "];
+26 [label =  "discover 1 | fin 1 | wavered 1 | surrounded 1 | poured 1 | "];
+27 [label =  "started 1 | from 2 | were 3 | right 1 | well 1 | "];
+28 [label =  "could 1 | didnt 1 | join 1 | be 4 | that 1 | loneliest 1 | "];
+29 [label =  "to 10 | among 3 | his 11 | "];
+29 -- 30
+29 -- 35
+29 -- 41
+29 -- 47
+30 [label =  "glare 1 | blue 9 | come 5 | "];
+30 -- 31
+30 -- 32
+30 -- 33
+30 -- 34
+31 [label =  "but 5 | go 1 | coral 1 | waiting 1 | "];
+32 [label =  "not 1 | letting 1 | anybody 1 | "];
+33 [label =  "voice 1 | think 1 | for 4 | call 1 | "];
+34 [label =  "you 12 | tucked 1 | my 4 | never 1 | anything 2 | said 1 | already 1 | "];
+35 [label =  "and 13 | waves 1 | out 3 | by 2 | "];
+35 -- 36
+35 -- 37
+35 -- 38
+35 -- 39
+35 -- 40
+36 [label =  "on 3 | this 1 | upset 1 | before 1 | cave 2 | do 2 | said 2 | "];
+37 [label =  "i 8 | suddenly 2 | play 2 | how 1 | "];
+38 [label =  "angry 1 | it 3 | called 3 | came 1 | how 1 | followed 1 | disappeared 1 | "];
+39 [label =  "last 1 | wonderful 1 | new 1 | forth 1 | will 3 | is 1 | "];
+40 [label =  "ever 1 | glide 1 | scales 9 | special 1 | "];
+41 [label =  "when 2 | way 1 | told 2 | just 4 | "];
+41 -- 42
+41 -- 43
+41 -- 44
+41 -- 45
+41 -- 46
+42 [label =  "glittering 3 | every 1 | filled 1 | wanted 1 | happy 4 | felt 1 | "];
+43 [label =  "beyond 1 | ordinary 1 | felt 1 | whizzed 1 | other 4 | small 1 | around 1 | "];
+44 [label =  "want 2 | prized 1 | an 1 | shocked 1 | flashing 1 | bubbled 1 | troubles 1 | "];
+45 [label =  "miss 1 | shining 2 | caught 1 | gave 1 | more 1 | "];
+46 [label =  "shimmer 1 | more 1 | green 1 | possessions 1 | inside 1 | "];
+47 [label =  "would 3 | long 3 | me 6 | carefully 1 | "];
+47 -- 48
+47 -- 49
+47 -- 50
+47 -- 51
+47 -- 52
+48 [label =  "gave 1 | fish 33 | been 2 | their 1 | thank 2 | "];
+49 [label =  "reef 1 | through 1 | happened 1 | ocean 3 | "];
+50 [label =  "delighted 1 | cloud 1 | here 1 | everyone 1 | many 1 | so 4 | "];
+51 [label =  "get 1 | answer 1 | light 1 | "];
+52 [label =  "pulled 1 | was 6 | home 1 | feeling 1 | without 1 | shimmery 1 | take 1 | "];
+}

@@ -1,0 +1,151 @@
+-939544134 if 3 
+-310385986 mouse 2 
+798735917 numneroff 1 
+--------
+-1878590444 fluff 1 
+-1617028169 probably 4 
+-1355556651 joffe 1 
+--------
+-2145439517 read 2 
+-2138625015 youll 2 
+-2121289186 pen 1 
+-2114163276 story 1 
+-1991937304 in 4 
+--------
+-1769380072 have 2 
+-1724436996 make 2 
+-1724237325 are 1 
+-1655363635 your 2 
+-1652341378 then 2 
+--------
+-1559972305 him 5 
+-1559797303 pictures 2 
+-1527512359 even 1 
+-1479991117 thirsty 1 
+-1413819909 few 1 
+-1243254680 one 1 
+--------
+-1203391218 give 3 
+-1172916702 fix 1 
+-1047743550 away 1 
+--------
+-607091840 cookie 3 
+-527637424 needs 1 
+-454300978 look 2 
+--------
+-908473912 see 1 
+-871068193 ask 7 
+-820633256 as 1 
+-817894195 he 7 
+-805065478 a 23 
+-791905039 glass 3 
+--------
+-589920329 doesnt 1 
+-540891745 of 5 
+-537384911 picture 1 
+-475945641 stand 1 
+--------
+-526262204 at 3 
+-508371681 name 1 
+-395446403 house 1 
+--------
+-415068604 start 1 
+-391329650 little 1 
+-390921297 nap 1 
+-384533625 mustache 1 
+-310865401 the 8 
+--------
+-221557016 might 2 
+-115178228 going 2 
+116087539 looks 2 
+334762364 you 7 
+398697858 hang 2 
+549012902 and 6 
+727615269 pair 1 
+--------
+-293247951 with 3 
+-280011329 up 4 
+-255067413 may 1 
+-255055456 back 1 
+-251470526 means 1 
+27163086 crawl 1 
+--------
+-217399452 which 1 
+-203673822 drawing 1 
+-163351492 from 1 
+100938254 go 1 
+--------
+-95492489 laura 1 
+-95057709 well 1 
+-69306902 that 1 
+--------
+156400881 trim 2 
+260699621 end 1 
+281920450 broom 1 
+322789885 for 7 
+332700596 times 1 
+--------
+337012381 refrigerator 2 
+373618732 nail 1 
+386805392 washing 1 
+521389546 tape 1 
+--------
+461365550 to 14 
+479125522 on 1 
+547052702 sweep 2 
+--------
+659131203 sign 1 
+667771902 hes 6 
+681281891 giving 1 
+690371294 it 3 
+--------
+750826312 hell 16 
+751975182 finished 2 
+792153650 mirror 2 
+--------
+1122737174 hair 1 
+1361797844 want 6 
+1471048683 carried 1 
+1819792932 straw 1 
+--------
+870254100 himself 2 
+950627369 will 1 
+997191126 by 1 
+1061724722 chances 1 
+1101005379 room 1 
+1121903607 every 1 
+--------
+1147685952 remind 1 
+1158193931 when 6 
+1161076244 comfortable 1 
+1179898141 scissors 1 
+1190638715 milk 5 
+1196162821 looking 1 
+1208643140 excited 1 
+--------
+899625188 notice 1 
+1376556099 sweeping 1 
+1378260014 blanket 1 
+1601610408 pillow 1 
+--------
+1471329637 box 1 
+1490197987 floors 1 
+1492247016 need 1 
+1533058545 asks 1 
+1601610408 pillow 1 
+1686638399 his 4 
+1734227525 scotch 1 
+--------
+1869778082 sure 1 
+1994386432 so 4 
+2001916304 done 1 
+2005692365 get 2 
+2013172758 napkin 1 
+2062544193 books 1 
+2125632377 take 1 
+--------
+This text file has 22 sentences.
+The most popular word in this text file is 'a', which appears 23 times.
+The unique word frequency of this text file is 120.
+This text file has 282 words in total.
+This text file has an average word length of 3.8 letters.
